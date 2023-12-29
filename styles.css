@@ -13,10 +13,36 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: #FFF7D4;
 }
 .gamebox{
     width: 80%;
     height: 80%;
-    background-color: aquamarine;
+    background-color: #B1C381;
+    border-radius: 30px;
+    /* cursor: none; */
+    overflow: hidden;
+}
+.menu{
+    width: 20%;
+    height: 100%;
+    background-color: #808f59;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 30px 80px 30px; 
+    flex-direction: column;
+
+}
+.scorebox,.turnbox{
+    width: 100px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+.scores{
+    display: flex;
+    
+    flex-direction: column;
+    
+    
 }
