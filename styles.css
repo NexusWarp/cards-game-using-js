@@ -22,6 +22,7 @@ body{
     border-radius: 30px;
     /* cursor: none; */
     overflow: hidden;
+    display: flex;
 }
 .menu{
     width: 20%;
@@ -29,12 +30,13 @@ body{
     background-color: #808f59;
     display: flex;
     justify-content: space-between;
-    padding: 50px 30px 80px 30px; 
+    padding: 50px 30px; 
     flex-direction: column;
+    /* align-items: center; */
 
 }
 .scorebox,.turnbox{
-    width: 100px;
+    width: 100%;
     height: 30px;
     background-color: aliceblue;
     border-radius: 5px;
@@ -45,4 +47,29 @@ body{
     flex-direction: column;
     
     
+}
+.score,.turns{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: white;
+}
+.scores h2{
+    margin-bottom: 3px;
+}
+.gamepanel{
+    width: 80%;
+    height: 100%;
+    /* background-color: #ffd20a; */
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#crd{
+    width: 80px;
+    margin: 2px;
 }
