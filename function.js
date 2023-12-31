@@ -4,10 +4,11 @@ let turns = 3;
 let gameFinish = `<h2 class="finish">You Won!!</h2>`;
 // let ranCrd = (Math.floor(Math.random()*52)) + 1;
 // let CreateImage = `<img id="crd" src="images/${ranCrd}.png" class="${ranCrd}">`;
-let currentLevel = 1;
+
+let currentLevel = localStorage.getItem("level");
 document.querySelector(".curlevel").innerHTML = currentLevel;
 // cardsArray.push(ranCrd);
-
+localStorage.setItem("level",currentLevel);
 document.querySelector(".btns").style.visibility = "hidden"
 //create random cards
 let CreateImageBack = "";
@@ -57,6 +58,7 @@ let chosedCrd = det.target.className;
 if(chosedCrd == rmCard){
     score+=10;
     currentLevel++;
+    localStorage.setItem("level",currentLevel);
     document.querySelector(".gamescore").innerHTML = score;
     document.querySelector(".crd").innerHTML = gameFinish;
     document.querySelector(".btns").style.visibility = "visible"
