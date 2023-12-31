@@ -5,10 +5,16 @@ let gameFinish = `<h2 class="finish">You Won!!</h2>`;
 // let ranCrd = (Math.floor(Math.random()*52)) + 1;
 // let CreateImage = `<img id="crd" src="images/${ranCrd}.png" class="${ranCrd}">`;
 
-let currentLevel = localStorage.getItem("level",1);
+let currentLevel = localStorage.getItem("level");
+if (currentLevel === null) {
+    
+    currentLevel = 1;
+  
+    localStorage.setItem("level", currentLevel);
+  }
 document.querySelector(".curlevel").innerHTML = currentLevel;
 // cardsArray.push(ranCrd);
-localStorage.setItem("level",currentLevel);
+
 document.querySelector(".btns").style.visibility = "hidden"
 //create random cards
 let CreateImageBack = "";
