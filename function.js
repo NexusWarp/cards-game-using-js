@@ -10,16 +10,31 @@ document.querySelector(".curlevel").innerHTML = currentLevel;
 
 document.querySelector(".btns").style.visibility = "hidden"
 //create random cards
+let CreateImageBack = "";
 function ImageCreation(level){
     let CreateImage ="";
+    
+
     for(i=0;i<level;i++){
         let rn = (Math.floor(Math.random()*52))+1;
         cardsArray.push(rn);
         CreateImage += `<img id="crd" src="images/${rn}.png" class="${rn}">`;
+        CreateImageBack += `<img id="crd" src="images/back.png" class="${rn}">`;
     }
     document.querySelector(".crd").innerHTML = CreateImage;
+   
+    if(level<10){
+        document.querySelector(".crd").style.marginTop = "235px"
+    }  
 }
-ImageCreation(currentLevel);
+
+   
+ImageCreation(currentLevel,"images");
+
+setTimeout(()=>{
+    document.querySelector(".crd").innerHTML = CreateImageBack;
+    
+},5000);
 
 let rmCard;
 function CreateTargetCard(arrLength){
@@ -31,20 +46,13 @@ function CreateTargetCard(arrLength){
 CreateTargetCard(cardsArray.length);
 
 
-// console.log(cardsArray);
-// for(i=1;i<currentLevel;i++){
-//     let rn = (Math.floor(Math.random()*52))+1;
-//     cardsArray.push(rn);
-//     CreateImage += `<img id="crd" src="images/${rn}.png" class="${rn}">`;
-// }
-
-// console.log(cardsArray.length);
 
 
 
 
 //check clciked card
 document.querySelector(".crd").addEventListener("click",(det)=>{
+CreateImageBack='';
 let chosedCrd = det.target.className;
 if(chosedCrd == rmCard){
     score+=10;
@@ -74,4 +82,9 @@ document.querySelector("#nextbtn").addEventListener("click",()=>{
     CreateTargetCard(cardsArray.length);
     document.querySelector(".curlevel").innerHTML = currentLevel;
     document.querySelector(".btns").style.visibility = "hidden"
+    setTimeout(()=>{
+        document.querySelector(".crd").innerHTML = CreateImageBack;
+        
+    },5000);
+    
 })
