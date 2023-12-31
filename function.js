@@ -1,13 +1,14 @@
 let cardsArray = [];
 let score = 0;
 let turns = 3;
+let gameFinish = `<h2 class="finish">You Won!!</h2>`;
 // let ranCrd = (Math.floor(Math.random()*52)) + 1;
 // let CreateImage = `<img id="crd" src="images/${ranCrd}.png" class="${ranCrd}">`;
-let currentLevel = 10;
+let currentLevel = 1;
 document.querySelector(".curlevel").innerHTML = currentLevel;
 // cardsArray.push(ranCrd);
 
-
+document.querySelector(".btns").style.visibility = "hidden"
 //create random cards
 function ImageCreation(level){
     let CreateImage ="";
@@ -49,11 +50,19 @@ if(chosedCrd == rmCard){
     score+=10;
     currentLevel++;
     document.querySelector(".gamescore").innerHTML = score;
+    document.querySelector(".crd").innerHTML = gameFinish;
+    document.querySelector(".btns").style.visibility = "visible"
+
 }
 else if(chosedCrd !== rmCard){
     turns --;
-   
     document.querySelector(".turnsrem").innerHTML = turns;
+    if(turns <0){
+        turns = 0;
+        document.querySelector(".turnsrem").innerHTML = turns;
+        document.querySelector(".crd").innerHTML = `<h2 class="finish">You Lose, Try Again!!</h2>`
+        document.querySelector(".btns").style.visibility = "visible"
+    }
 }
 })
 
@@ -62,5 +71,7 @@ else if(chosedCrd !== rmCard){
 document.querySelector("#nextbtn").addEventListener("click",()=>{
     cardsArray = [];
     ImageCreation(currentLevel);
-    
+    CreateTargetCard(cardsArray.length);
+    document.querySelector(".curlevel").innerHTML = currentLevel;
+    document.querySelector(".btns").style.visibility = "hidden"
 })
