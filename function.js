@@ -5,7 +5,7 @@ let gameFinish = `<h2 class="finish">You Won!!</h2>`;
 // let ranCrd = (Math.floor(Math.random()*52)) + 1;
 // let CreateImage = `<img id="crd" src="images/${ranCrd}.png" class="${ranCrd}">`;
 
-let currentLevel = localStorage.getItem("level");
+let currentLevel = localStorage.getItem("level",1);
 document.querySelector(".curlevel").innerHTML = currentLevel;
 // cardsArray.push(ranCrd);
 localStorage.setItem("level",currentLevel);
