@@ -96,3 +96,8 @@ document.querySelector("#nextbtn").addEventListener("click",()=>{
     },5000);
     
 })
+
+document.querySelector("#resetbtn").addEventListener("click",()=>{
+    localStorage.clear();
+    location.reload();
+})
