@@ -36,7 +36,7 @@ function ImageCreation(level){
 }
 
    
-ImageCreation(currentLevel,"images");
+ImageCreation(currentLevel);
 
 setTimeout(()=>{
     document.querySelector(".crd").innerHTML = CreateImageBack;
