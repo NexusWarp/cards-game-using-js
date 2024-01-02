@@ -101,3 +101,9 @@ document.querySelector("#resetbtn").addEventListener("click",()=>{
     localStorage.clear();
     location.reload();
 })
+
+document.querySelector("#restartbtn").addEventListener("click",()=>{
+    currentLevel--;
+    localStorage.setItem("level",currentLevel);
+    location.reload();
+})
