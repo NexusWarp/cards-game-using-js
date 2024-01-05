@@ -1,4 +1,4 @@
-Cards game using Javascript
+This Classic Cards game is entirely made using javascript
 
 v 1.0 => Initial launch
 
